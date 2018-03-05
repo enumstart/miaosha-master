@@ -1,4 +1,4 @@
-package com.miaosha.common.redis.base.ptting;
+package com.miaosha.common.redis.base;
 
 /**
  * Created by pc on 2018/3/5.

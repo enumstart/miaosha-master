@@ -1,4 +1,4 @@
-package com.miaosha.common.redis.base;
+package com.miaosha.common.redis.base.ptting;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -19,6 +19,15 @@ public class RedisConfig {
 
     public String getHost() {
         return host;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setHost(String host) {
