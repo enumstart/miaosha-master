@@ -10,6 +10,7 @@ public class CodeMsg {
     //通用异常
     public static CodeMsg SUCCESS = new CodeMsg(200, "success");
     public static CodeMsg SERVER_ERROR = new CodeMsg(500100, "服务端异常");
+    public static CodeMsg BIND_ERROR = new CodeMsg(500101, "绑定异常：%s");
     //登入模块5002
     public static CodeMsg SESSION_ERROR = new CodeMsg(5002001, "session异常");
     public static CodeMsg PASSWORD_EMPTY = new CodeMsg(5002002, "登入密码不能为空");
@@ -20,6 +21,12 @@ public class CodeMsg {
     //商品模块5003
     //订单模块5004
     //秒杀模块5005
+
+    public CodeMsg fillArgs(Object... args){
+        int code = this.code;
+        String msg = String.format(this.msg, args);
+        return new CodeMsg(code, msg);
+    }
 
     private CodeMsg(int code, String msg){
         this.code = code;
