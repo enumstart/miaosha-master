@@ -73,13 +73,8 @@ public class DemoController {
     @RequestMapping("/redis/testget")
     @ResponseBody
     public Result<String> testRedisGet(){
-<<<<<<< HEAD
-        redisService.set(UserKey.getById, "1", "hello");
-        String str = redisService.get(UserKey.getById, "1", String.class);
-=======
         redisService.set(UserKey.getById,"k1", "hello");
         String str = redisService.get(UserKey.getById, "k1", String.class);
->>>>>>> db081c9479b8c692137d33cabf3d2f4cd35075b3
         return Result.success(str);
     }
 }

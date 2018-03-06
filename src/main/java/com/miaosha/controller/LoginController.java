@@ -36,8 +36,8 @@ public class LoginController {
     @ResponseBody
     public Result<Boolean> doLogin(HttpServletResponse response, @Valid LoginVo loginVo){
         log.info(loginVo.toString());
-        if (StringUtils.isBlank(loginVo.getMobile())) return Result.error(CodeMsg.MOBILE_EMPTY);
-        if (StringUtils.isBlank(loginVo.getPassword())) return Result.error(CodeMsg.PASSWORD_EMPTY);
+//        if (StringUtils.isBlank(loginVo.getMobile())) return Result.error(CodeMsg.MOBILE_EMPTY);
+//        if (StringUtils.isBlank(loginVo.getPassword())) return Result.error(CodeMsg.PASSWORD_EMPTY);
         miaoShaUserService.login(response, loginVo);
         return Result.success(true);
     }
