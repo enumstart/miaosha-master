@@ -1,6 +1,7 @@
 package com.miaosha.controller;
 
 import com.miaosha.common.redis.RedisService;
+import com.miaosha.common.redis.operate.UserKey;
 import com.miaosha.common.result.CodeMsg;
 import com.miaosha.common.result.Result;
 import com.miaosha.domain.User;
@@ -65,11 +66,15 @@ public class DemoController {
         return Result.success(testTx);
     }
 
+    /**
+     * 测试redis
+     * @return
+     */
     @RequestMapping("/redis/testget")
     @ResponseBody
     public Result<String> testRedisGet(){
-        redisService.set("k1", "hello");
-        String str = redisService.get("k1", String.class);
+        redisService.set(UserKey.getById, "1", "hello");
+        String str = redisService.get(UserKey.getById, "1", String.class);
         return Result.success(str);
     }
 }
