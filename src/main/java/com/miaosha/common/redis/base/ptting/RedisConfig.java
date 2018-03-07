@@ -21,7 +21,6 @@ public class RedisConfig {
         return host;
     }
 
-
     public String getPassword() {
         return password;
     }
