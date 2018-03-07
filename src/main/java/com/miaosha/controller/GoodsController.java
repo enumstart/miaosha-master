@@ -79,14 +79,18 @@ public class GoodsController {
         Long currentTime = System.currentTimeMillis();
         int status = 0;
         int remainTime = 0;
-        if (currentTime > startTime){//未开始
+
+        if (startTime > currentTime){//未开始
             status = 0;
             remainTime = (int) ((currentTime - startTime)/1000);
-        }else if(endTime > currentTime){//已结束
+        }else if(endTime < currentTime){//已结束
             status = 2;
         }else{//进行中
             status = 1;
         }
+        model.addAttribute("goods", goods);
+        model.addAttribute("status", status);
+        model.addAttribute("remainTime", remainTime);
         return "goods_detail";
     }
 }

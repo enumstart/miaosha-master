@@ -2,7 +2,7 @@ package com.miaosha.domain;
 
 import java.util.Date;
 
-public class MiaoshaGoods {
+public class MiaoShaGoods {
 	private Long id;
 	private Long goodsId;
 	private Integer stockCount;

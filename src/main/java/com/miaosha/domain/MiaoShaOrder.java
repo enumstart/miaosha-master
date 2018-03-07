@@ -1,6 +1,6 @@
 package com.miaosha.domain;
 
-public class MiaoshaOrder {
+public class MiaoShaOrder{
 	private Long id;
 	private Long userId;
 	private Long  orderId;
