@@ -82,7 +82,7 @@ public class GoodsController {
 
         if (startTime > currentTime){//未开始
             status = 0;
-            remainTime = (int) ((currentTime - startTime)/1000);
+            remainTime = (int) ((startTime - currentTime)/1000);
         }else if(endTime < currentTime){//已结束
             status = 2;
         }else{//进行中

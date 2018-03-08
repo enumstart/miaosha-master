@@ -21,6 +21,8 @@ public class CodeMsg {
     //商品模块5003
     //订单模块5004
     //秒杀模块5005
+    public static CodeMsg MIAO_SHA_OVER = new CodeMsg(5005001, "秒杀已结束");
+    public static CodeMsg MIAO_SHA_REPEAT = new CodeMsg(5005002, "重复参与秒杀活动");
 
     public CodeMsg fillArgs(Object... args){
         int code = this.code;
