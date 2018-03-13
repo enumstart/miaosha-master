@@ -65,6 +65,7 @@ public class UserAgermentResolver implements HandlerMethodArgumentResolver {
      */
     private String getCookieToken(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
+        if (null == cookies || cookies.length == 0) return null;
         for (Cookie cookie : cookies) {
             if (MiaoShaUserService.MIAO_SHA_USER_TOKEN.equals(cookie.getName())){
                 return cookie.getValue();

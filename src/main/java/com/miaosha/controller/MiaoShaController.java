@@ -55,7 +55,7 @@ public class MiaoShaController {
         //减库存 下订单 写入秒杀订单
         OrderInfo orderInfo = miaoShaService.doMiaoSha(user, goodsVo);
         model.addAttribute("orderInfo", orderInfo);
-        model.addAttribute("goodsVo", goodsVo);
+        model.addAttribute("goods", goodsVo);
         return "order_detail";
     }
 }

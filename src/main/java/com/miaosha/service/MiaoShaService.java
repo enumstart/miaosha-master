@@ -6,6 +6,7 @@ import com.miaosha.vo.GoodsVo;
 import com.miaosha.vo.MiaoShaUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by enum on 2018/3/8.
@@ -30,6 +31,7 @@ public class MiaoShaService {
      * @param goodsVo
      * @return
      */
+    @Transactional
     public OrderInfo doMiaoSha(MiaoShaUser user, GoodsVo goodsVo) {
         //减少秒杀库存
         goodsService.reduceStock(goodsVo);
