@@ -36,7 +36,15 @@ public class MiaoShaUserService {
      * @return
      */
     public MiaoShaUser getById(long id){
-        return miaoShaUserDao.getById(id);
+        MiaoShaUser user = redisService.get(MiaoShaUserKey.USER_ID, "id" + id, MiaoShaUser.class);
+        if (StringUtils.isNotBlank(user)){
+            return user;
+        }
+        user = miaoShaUserDao.getById(id);
+        if ( null != user){
+            redisService.set(MiaoShaUserKey.USER_ID, "id" + id, user);
+        }
+        return user;
     }
 
     /**

@@ -13,4 +13,5 @@ public class MiaoShaUserKey extends BasePrefix {
         super(EXPERIE_TIME, prefix);
     }
     public static MiaoShaUserKey USER_TOKEN = new MiaoShaUserKey("user_token");
+    public static MiaoShaUserKey USER_ID = new MiaoShaUserKey("id");
 }
